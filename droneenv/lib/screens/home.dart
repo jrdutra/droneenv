@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:droneenv/utils/enviroment.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,9 +10,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Estou na HOME"),
-      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              child: Image.asset(
+                  "assets/images/logo-dark.png"
+              ),
+            )
+          ],
+        )
+      )
     );
   }
 }

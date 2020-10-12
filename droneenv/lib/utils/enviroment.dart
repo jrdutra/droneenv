@@ -17,7 +17,11 @@ class Enviroment {
   static LinearGradient lightDarkGrey = LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
-      colors: [lightGrey, darkGrey]
+      colors: [
+        const Color(0xFF1A62C3),
+        const Color(0xFFDFDFDF)
+      ],
+      tileMode: TileMode.repeated
   );
 
 }

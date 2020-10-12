@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:droneenv/screens/splash.dart';
+import 'package:droneenv/screens/home.dart';
+import 'package:droneenv/utils/enviroment.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-          primaryColor: Colors.lightBlue,
+          primaryColor: Enviroment.darkGrey,
       ),
-      home: Splash(),
+      home: Home(),
     );
   }
 }
