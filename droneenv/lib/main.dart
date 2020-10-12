@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:droneenv/screens/home.dart';
+import 'package:droneenv/screens/home/home.dart';
 import 'package:droneenv/utils/myColors.dart';
 
 void main() {

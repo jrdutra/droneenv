@@ -12,7 +12,13 @@ class MyColors {
 
   //Atributes
 
+  Color ultraLightGrey = Color(0xFF545454);
+
+  Color veryLightGrey = Color(0xFF444444);
+
   Color lightGrey = Color(0xFF343434);
+
+  Color mediumGrey = Color(0xFF242424);
 
   Color darkGrey = Color(0xFF141414);
 
