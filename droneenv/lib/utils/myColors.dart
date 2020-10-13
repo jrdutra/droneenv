@@ -22,13 +22,29 @@ class MyColors {
 
   Color darkGrey = Color(0xFF141414);
 
+
+  Color veryLightBlue = Color(0xFF5692e1);
+
   Color lightBlue = Color(0xFF2E78DA);
 
   Color darkBlue = Color(0xFF1A62C3);
 
+  Color veryDarkBlue = Color(0xFF154e99);
+
+
+  Color lightCian = Color(0xFF2fc3da);
+
+
+  Color veryLightWhite = Color(0xFFFFFFFF);
+
   Color lightWhite = Color(0xFFEBEBEB);
 
   Color darkWhite = Color(0xFFDFDFDF);
+
+  Color veryDarkWhite = Color(0xFFcfcfcf);
+
+
+
 
   LinearGradient lightDarkGrey = LinearGradient(
       begin: Alignment.topLeft,
