@@ -8,14 +8,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  final MyColors myColors = MyColors();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-          primaryColor: myColors.darkGrey,
+        primaryColor: MyColors.darkGrey,
       ),
       home: Home(),
     );
