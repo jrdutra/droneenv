@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
+import 'dart:io';
 
 
 class Home extends StatefulWidget {
+  Home({Key key}) : super(key: key);
   @override
   _HomeState createState() => _HomeState();
 }
@@ -12,12 +14,16 @@ class _HomeState extends State<Home> {
 
   MyColors myColors = MyColors();
 
+  bool click = false;
+
   @override
   Widget build(BuildContext context) {
+    click = false;
+    Color _color = Colors.lightBlue;
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilder(
-          builder: (_, constraints){
+          builder: (context, constraints){
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,7 +89,20 @@ class _HomeState extends State<Home> {
                 Container(
                   width: constraints.maxWidth,
                   height: constraints.maxHeight * 0.75,
-                  color: myColors.darkGrey,
+                  color: click ? myColors.veryDarkWhite : myColors.lightGrey,
+                  child: Center(
+                    child: FlatButton(
+                      color: _color,
+                      onPressed: (){
+                        print("clicou");
+                        setState(() {
+                          _color = Colors.red;
+                        });
+                      },
+
+                      child: Text("Teste"),
+                    ),
+                  ),
                 ),
                 Container(
                   padding: EdgeInsets.only(
@@ -97,31 +116,43 @@ class _HomeState extends State<Home> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(
-                            left: constraints.maxHeight * 0.01,
-                            top: constraints.maxHeight * 0.01,
-                            bottom: constraints.maxHeight * 0.01
-                        ),
-                        width: constraints.maxHeight * 0.13,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(constraints.maxWidth * 0.02)),
-                          color: myColors.lightGrey,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              child: Icon(
-                                Icons.cloud_queue,
-                                color: myColors.lightWhite,
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            print("Clicou");
+                            click = true;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          //Animação
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastOutSlowIn,
+                          //Decoração
+                          padding: EdgeInsets.only(
+                              left: constraints.maxHeight * 0.01,
+                              top: constraints.maxHeight * 0.01,
+                              bottom: constraints.maxHeight * 0.01
+                          ),
+                          width: constraints.maxHeight * 0.13,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(constraints.maxWidth * 0.02)),
+                            color: click ? myColors.veryDarkWhite : myColors.lightGrey,
+                          ),
+                          child: Column( //Conteúdo
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                child: Icon(
+                                  Icons.cloud_queue,
+                                  color: myColors.lightWhite,
+                                ),
                               ),
-                            ),
-                            Container(
-                              child: Text("Agora"),
-                            ),
-                          ],
+                              Container(
+                                child: Text("Agora"),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(

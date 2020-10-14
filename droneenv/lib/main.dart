@@ -8,7 +8,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  MyColors myColors = MyColors();
+  final MyColors myColors = MyColors();
 
   @override
   Widget build(BuildContext context) {
