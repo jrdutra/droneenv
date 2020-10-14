@@ -23,6 +23,10 @@ class _HomeState extends State<Home> {
 
   Color _buttonColor4 = MyColors.lightGrey;
 
+  double _buttonSizeFactor5 = 0.13;
+  Color _buttonColor5 = MyColors.lightGrey;
+  double _paddinSizeFactor5 = 0.01;
+
   @override
   Widget build(BuildContext context) {
 
@@ -301,31 +305,51 @@ class _HomeState extends State<Home> {
                           SizedBox(
                             width: constraints.maxHeight * 0.01,
                           ),
-                          Container(
-                            padding: EdgeInsets.only(
-                                left: constraints.maxHeight * 0.01,
-                                top: constraints.maxHeight * 0.01,
-                                bottom: constraints.maxHeight * 0.01
-                            ),
-                            width: constraints.maxHeight * 0.13,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(constraints.maxWidth * 0.02)),
-                              color: MyColors.lightGrey,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  child: Icon(
-                                    Icons.person_pin,
-                                    color: MyColors.lightWhite,
+                          GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                _buttonColor5 = MyColors.lightBlue;
+                                _buttonSizeFactor5 = 0.18;
+                                _paddinSizeFactor5 = 0.03;
+                              });
+                            },
+                            child: AnimatedContainer(
+                              //Animação
+                              duration: Duration(milliseconds: 120),
+                              curve: Curves.fastOutSlowIn,
+                              onEnd: (){
+                                setState(() {
+                                  _buttonSizeFactor5 = 0.13;
+                                  _buttonColor5 = MyColors.lightGrey;
+                                  _paddinSizeFactor5 = 0.01;
+                                });
+                              },
+                              //Decoração
+                              padding: EdgeInsets.only(
+                                  left: constraints.maxHeight * _paddinSizeFactor5,
+                                  top: constraints.maxHeight * 0.01,
+                                  bottom: constraints.maxHeight * 0.01
+                              ),
+                              width: constraints.maxHeight * _buttonSizeFactor5,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(constraints.maxWidth * 0.02)),
+                                color: _buttonColor5,
+                              ),
+                              child: Column( //Conteúdo
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    child: Icon(
+                                      Icons.person_pin,
+                                      color: MyColors.lightWhite,
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  child: Text("Perto"),
-                                ),
-                              ],
+                                  Container(
+                                    child: Text("Perto"),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(
