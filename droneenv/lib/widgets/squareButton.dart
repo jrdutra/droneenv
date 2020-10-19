@@ -44,6 +44,7 @@ class _SquareButtonState extends State<SquareButton> {
           widget.currentButtonPressedColor = widget.buttonPressedColor;
           widget.buttonSizeFactor = 0.18;
           widget.paddinSizeFactor = 0.03;
+
         });
         widget.onTap();
       },
