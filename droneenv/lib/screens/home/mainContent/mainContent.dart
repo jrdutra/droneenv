@@ -1,38 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:droneenv/screens/home/mainContent/weatherNow.dart';
 import 'package:droneenv/screens/home/mainContent/weatherForecast.dart';
+import 'dart:io';
 
-class MainContent extends StatefulWidget {
+class MainContent extends ChangeNotifier{
 
-  double maxHeight;
-  double maxWidth;
-  Color color;
+  int _currentIndex = 0;
 
-  MainContent(this.maxWidth, this.maxHeight, this.color, {Key key}) : super(key : key);
-
-  @override
-  _MainContentState createState() => _MainContentState();
-}
-
-class _MainContentState extends State<MainContent> {
-
-  int index = 0;
-
-  List mainScreens = [
+  List _mainScreens = [
     WeatherNow(),
     WeatherForecast()
   ];
 
-  @override
-  Widget build(BuildContext context) {
+  Widget get mainScreen => _mainScreens[_currentIndex];
 
-    index = 0;
+  void setCurrentIndex(int index) {
 
-    return Container(
-        width: widget.maxWidth,
-        height: widget.maxHeight * 0.75,
-        color: widget.color,
-        child: mainScreens[index]
-    );
+    this._currentIndex = index;
+
+    notifyListeners();
   }
+
 }

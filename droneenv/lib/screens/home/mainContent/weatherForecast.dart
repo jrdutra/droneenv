@@ -4,19 +4,20 @@ import 'package:droneenv/utils/myColors.dart';
 import 'dart:io';
 
 class WeatherForecast extends StatefulWidget {
+
   @override
   _WeatherForecastState createState() => _WeatherForecastState();
 }
 
 class _WeatherForecastState extends State<WeatherForecast> {
 
-  double _contentOpacity = 1;
+  double _opacity = 1.0;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
         curve: Curves.fastOutSlowIn,
-        opacity: _contentOpacity,
+        opacity: this._opacity,
         duration: Duration(milliseconds: 500),
         child: Container(
             child: Center(

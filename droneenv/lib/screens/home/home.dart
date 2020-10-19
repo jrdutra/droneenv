@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'package:droneenv/widgets/topBar.dart';
 import 'package:droneenv/widgets/squareButton.dart';
+import 'package:droneenv/screens/home/mainContent/weatherNow.dart';
 import 'dart:io';
+
+import 'package:provider/provider.dart';
 
 
 class Home extends StatefulWidget {
@@ -35,10 +38,15 @@ class _HomeState extends State<Home> {
                         MyColors.lightBlue,
                         "assets/images/logo-dark.png"
                     ),
-                    MainContent(
-                      constraints.maxWidth,
-                      constraints.maxHeight,
-                      MyColors.darkGrey
+                    Container(
+                      width: constraints.maxWidth,
+                      height: constraints.maxHeight * 0.75,
+                      color: MyColors.darkGrey,
+                      child: Consumer<MainContent>(
+                        builder: (context, mainContent, child){
+                          return mainContent.mainScreen;
+                        },
+                      )
                     ),
                     Container(
                       padding: EdgeInsets.only(
@@ -63,7 +71,7 @@ class _HomeState extends State<Home> {
                             buttonPressedColor: MyColors.lightBlue,
                             iconTextColor: MyColors.lightWhite,
                             onTap:(){
-
+                                Provider.of<MainContent>(context, listen: false).setCurrentIndex(0);
                             }
                           ),
                           SizedBox(
@@ -80,7 +88,7 @@ class _HomeState extends State<Home> {
                               buttonPressedColor: MyColors.lightBlue,
                               iconTextColor: MyColors.lightWhite,
                               onTap:(){
-
+                                Provider.of<MainContent>(context, listen: false).setCurrentIndex(1);
                               }
                           ),
                         ],

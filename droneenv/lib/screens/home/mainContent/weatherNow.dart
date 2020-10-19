@@ -1,7 +1,10 @@
 
+import 'package:droneenv/screens/home/mainContent/mainContent.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'dart:io';
+
+import 'package:provider/provider.dart';
 
 class WeatherNow extends StatefulWidget {
 
@@ -13,15 +16,14 @@ class WeatherNow extends StatefulWidget {
 
 class _WeatherNowState extends State<WeatherNow> {
 
-  double _contentOpacity = 1;
+  double _opacity = 1.0;
 
   @override
   Widget build(BuildContext context) {
-    _contentOpacity = 1;
     return AnimatedOpacity(
         curve: Curves.fastOutSlowIn,
-        opacity: _contentOpacity,
-        duration: Duration(milliseconds: 500),
+        opacity: _opacity,
+        duration: Duration(milliseconds: 1000),
         child: Container(
             child: Center(
                 child: Column(
