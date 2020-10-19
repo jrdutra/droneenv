@@ -1,10 +1,9 @@
+import 'package:droneenv/screens/home/mainContent/mainContent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'package:droneenv/widgets/topBar.dart';
 import 'package:droneenv/widgets/squareButton.dart';
-import 'package:droneenv/screens/home/weatherNow.dart';
-import 'package:droneenv/screens/home/weatherForecast.dart';
 import 'dart:io';
 
 
@@ -16,15 +15,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  int index = 0;
 
   @override
   Widget build(BuildContext context) {
-
-    List mainScreens = [
-      WeatherNow(),
-      WeatherForecast()
-    ];
 
     return Scaffold(
         body: SafeArea(
@@ -42,11 +35,10 @@ class _HomeState extends State<Home> {
                         MyColors.lightBlue,
                         "assets/images/logo-dark.png"
                     ),
-                    Container(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight * 0.75,
-                      color: MyColors.darkGrey,
-                      child: mainScreens[index]
+                    MainContent(
+                      constraints.maxWidth,
+                      constraints.maxHeight,
+                      MyColors.darkGrey
                     ),
                     Container(
                       padding: EdgeInsets.only(
@@ -71,7 +63,7 @@ class _HomeState extends State<Home> {
                             buttonPressedColor: MyColors.lightBlue,
                             iconTextColor: MyColors.lightWhite,
                             onTap:(){
-                              index = 0;
+
                             }
                           ),
                           SizedBox(
@@ -88,7 +80,7 @@ class _HomeState extends State<Home> {
                               buttonPressedColor: MyColors.lightBlue,
                               iconTextColor: MyColors.lightWhite,
                               onTap:(){
-                                index = 1;
+
                               }
                           ),
                         ],
