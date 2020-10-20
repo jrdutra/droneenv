@@ -1,11 +1,13 @@
-import 'package:droneenv/screens/home/mainContent/mainContent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'package:droneenv/widgets/topBar.dart';
 import 'package:droneenv/widgets/squareButton.dart';
-import 'package:droneenv/screens/home/mainContent/weatherNow.dart';
+import 'package:droneenv/screens/home/weatherNow.dart';
+import 'package:droneenv/screens/home/weatherForecast.dart';
 import 'dart:io';
+
+
 
 import 'package:provider/provider.dart';
 
@@ -18,9 +20,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  List<Widget> _mainScreens = [
+    WeatherNow(),
+    WeatherForecast()
+  ];
+
+  static final _pageController = PageController(
+    initialPage: 1,
+  );
 
   @override
   Widget build(BuildContext context) {
+
+
 
     return Scaffold(
         body: SafeArea(
@@ -38,15 +50,24 @@ class _HomeState extends State<Home> {
                         MyColors.lightBlue,
                         "assets/images/logo-dark.png"
                     ),
-                    Container(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight * 0.75,
-                      color: MyColors.darkGrey,
-                      child: Consumer<MainContent>(
-                        builder: (context, mainContent, child){
-                          return mainContent.mainScreen;
-                        },
-                      )
+//                    Container(
+//                      width: constraints.maxWidth,
+//                      height: constraints.maxHeight * 0.75,
+//                      color: MyColors.darkGrey,
+//                      child: Consumer<MainContent>(
+//                        builder: (context, mainContent, child){
+//                          return mainContent.mainScreen;
+//                        },
+//                      )
+//                    ),
+                    Expanded(
+                      child: PageView.builder(
+                          controller: _pageController,
+                          itemCount: _mainScreens.length,
+                          itemBuilder: (context, index) {
+                            return _mainScreens[index];
+                          }
+                      ),
                     ),
                     Container(
                       padding: EdgeInsets.only(
@@ -71,7 +92,7 @@ class _HomeState extends State<Home> {
                             buttonPressedColor: MyColors.lightBlue,
                             iconTextColor: MyColors.lightWhite,
                             onTap:(){
-                                Provider.of<MainContent>(context, listen: false).setCurrentIndex(0);
+                                _pageController.animateToPage(0, curve: Curves.decelerate, duration: Duration(milliseconds: 500)); // for animated jump. Requires a curve and a duration
                             }
                           ),
                           SizedBox(
@@ -88,7 +109,7 @@ class _HomeState extends State<Home> {
                               buttonPressedColor: MyColors.lightBlue,
                               iconTextColor: MyColors.lightWhite,
                               onTap:(){
-                                Provider.of<MainContent>(context, listen: false).setCurrentIndex(1);
+                                _pageController.animateToPage(1, curve: Curves.decelerate, duration: Duration(milliseconds: 500));
                               }
                           ),
                         ],

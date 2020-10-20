@@ -1,5 +1,3 @@
-
-import 'package:droneenv/screens/home/mainContent/mainContent.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'dart:io';
@@ -25,6 +23,7 @@ class _WeatherNowState extends State<WeatherNow> {
         opacity: _opacity,
         duration: Duration(milliseconds: 1000),
         child: Container(
+            color: MyColors.darkGrey,
             child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

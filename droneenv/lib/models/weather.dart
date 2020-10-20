@@ -1,5 +1,5 @@
 
-class Wheather {
+class Weather {
 
   String _description;
   String _icon;

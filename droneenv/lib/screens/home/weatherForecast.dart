@@ -20,6 +20,7 @@ class _WeatherForecastState extends State<WeatherForecast> {
         opacity: this._opacity,
         duration: Duration(milliseconds: 500),
         child: Container(
+            color: MyColors.darkGrey,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
