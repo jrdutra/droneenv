@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:droneenv/screens/home/home.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'package:provider/provider.dart';
-import 'package:droneenv/models/weather.dart';
 import 'package:droneenv/models/weather_data.dart';
 
 void main() {

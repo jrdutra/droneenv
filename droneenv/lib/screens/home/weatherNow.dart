@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'dart:io';
-
 import 'package:provider/provider.dart';
 
 class WeatherNow extends StatefulWidget {
