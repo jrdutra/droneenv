@@ -17,7 +17,7 @@ class WeatherNow extends StatefulWidget {
 
 class _WeatherNowState extends State<WeatherNow> {
 
-  List<Color> _colorsBlue = [MyColors.veryDarkBlue ,MyColors.veryLightBlue];
+  List<Color> _colorsBlue = [MyColors.veryDarkBlue, MyColors.veryLightBlue];
 
   List<Color> _colorsGreen = [Colors.green , Colors.lightGreen[500]];
   List<Color> _colorsRed = [Colors.red , Colors.redAccent];
@@ -26,7 +26,7 @@ class _WeatherNowState extends State<WeatherNow> {
   List<double> _stops = [0.0, 1.0];
 
   final double _bottonMenuPaddingFactor = 0.01;
-  final double _vorderRadiusFactor = 0.02;
+  final double _borderRadiusFactor = 0.02;
   final double _boxShadowSpreadRadius = 2.0;
   final double _boxShadowblurRadius = 1.0;
 
@@ -38,7 +38,7 @@ class _WeatherNowState extends State<WeatherNow> {
 
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * _vorderRadiusFactor)),
+            borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * _borderRadiusFactor)),
             color: MyColors.lightGrey,
             boxShadow: [
               BoxShadow(
@@ -49,7 +49,7 @@ class _WeatherNowState extends State<WeatherNow> {
             ],
           ),
           child: Padding(
-            padding: EdgeInsets.all(widget.maxWidth * _vorderRadiusFactor),
+            padding: EdgeInsets.all(widget.maxWidth * _borderRadiusFactor),
             child: Column(
               children: [
                 Container(

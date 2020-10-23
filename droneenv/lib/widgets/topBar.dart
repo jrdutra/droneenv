@@ -36,25 +36,34 @@ class TopBar extends StatefulWidget {
 
 class _TopBarState extends State<TopBar> {
 
-  double paddinFactor = 0.09;
+  double _mutablePaddinFactor = 0.09;
+  final double _iMutablePaddinFactor = 0.09;
+
+  final double _heightWidgetFactor = 0.10;
+
+  final double _logoPaddingTop = 2;
+  final double _logoPaddingLeft = 10;
+
+  final double _logoHeigtFactor = 0.3;
+
+  final double _menuIconHeightFactor = 0.075;
 
   @override
   Widget build(BuildContext context) {
     return Container( //TOPO
-
       width: widget.maxWidth,
-      height: widget.maxHeight * 0.10,
+      height: widget.maxHeight * _heightWidgetFactor,
       color: widget.color1,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container( // Logo
-            padding: const EdgeInsets.only(top: 2, left: 10),
-            width: widget.maxWidth * 0.3,
+            padding: EdgeInsets.only(top: _logoPaddingTop, left: _logoPaddingLeft),
+            width: widget.maxWidth * _logoHeigtFactor,
             child: Image.asset(widget.logoPath),
           ),
           Container( //Botões
-              padding: const EdgeInsets.only(top: 2, right: 10),
+              padding: EdgeInsets.only(top: _logoPaddingTop, right: _logoPaddingLeft),
               child: Row(
                 children: [
                   GestureDetector(
@@ -62,25 +71,25 @@ class _TopBarState extends State<TopBar> {
                       child: AnimatedContainer(
                           duration: Duration(milliseconds: 120),
                           curve: Curves.fastOutSlowIn,
-                          width: widget.maxWidth * paddinFactor,
-                          height: widget.maxWidth * 0.09,
+                          width: widget.maxWidth * _mutablePaddinFactor,
+                          height: widget.maxWidth * _iMutablePaddinFactor,
                           child: GestureDetector(
                             onTapDown: (_){
                               setState(() {
                                 widget.tapColor = widget.color3;
-                                paddinFactor = 0.15;
+                                _mutablePaddinFactor = 0.15;
                               });
                             },
                             onTapUp: (_){
                               setState(() {
                                 widget.tapColor = widget.color2;
-                                paddinFactor = 0.09;
+                                _mutablePaddinFactor = _iMutablePaddinFactor;
                               });
                             },
                             child: Icon(
                               Icons.menu,
                               color: widget.tapColor,
-                              size: widget.maxWidth * 0.075,
+                              size: widget.maxWidth * _menuIconHeightFactor,
                             ),
                           )
                       )

@@ -37,14 +37,22 @@ class SquareButton extends StatefulWidget {
 
 class _SquareButtonState extends State<SquareButton> {
 
+  final double _buttonSizeFactorStart = 0.13;
+  final double _buttonPaddinSizeFactorStart = 0.01;
+
+  final double _buttonSizeFactorEnd = 0.18;
+  final double _buttonPaddinSizeFactorEnd = 0.03;
+
+  final double _borderRadiusFactor = 0.02;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
         setState(() {
           widget.currentButtonPressedColor = widget.buttonPressedColor;
-          widget.buttonSizeFactor = 0.18;
-          widget.paddinSizeFactor = 0.03;
+          widget.buttonSizeFactor = _buttonSizeFactorEnd;
+          widget.paddinSizeFactor = _buttonPaddinSizeFactorEnd;
 
         });
         widget.onTap();
@@ -55,20 +63,20 @@ class _SquareButtonState extends State<SquareButton> {
         curve: Curves.fastOutSlowIn,
         onEnd: (){
           setState(() {
-            widget.buttonSizeFactor = 0.13;
+            widget.buttonSizeFactor = _buttonSizeFactorStart;
             widget.currentButtonPressedColor = widget.buttonColor;
-            widget.paddinSizeFactor = 0.01;
+            widget.paddinSizeFactor = _buttonPaddinSizeFactorStart;
           });
         },
         //Decoração
         padding: EdgeInsets.only(
             left: widget.maxHeight * widget.paddinSizeFactor,
-            top: widget.maxHeight * 0.01,
-            bottom: widget.maxHeight * 0.01
+            top: widget.maxHeight * widget.paddinSizeFactor,
+            bottom: widget.maxHeight * widget.paddinSizeFactor
         ),
         width: widget.maxHeight * widget.buttonSizeFactor,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
+          borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * _borderRadiusFactor)),
           color: widget.currentButtonPressedColor,
         ),
         child: Column( //Conteúdo
