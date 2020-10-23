@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyColors {
+abstract class MyColors {
 
   //Atributes
 

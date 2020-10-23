@@ -10,6 +10,7 @@ class Weather {
   double _humidity;
   double _visibility;
   double _windSpeed;
+  double _probPrecipit;
   double _dirWindDegrees;
   double _clouds;
   String _locationName;
@@ -92,6 +93,12 @@ class Weather {
 
   set icon(String value) {
     _icon = value;
+  }
+
+  double get probPrecipit => _probPrecipit;
+
+  set probPrecipit(double value) {
+    _probPrecipit = value;
   }
 
 
