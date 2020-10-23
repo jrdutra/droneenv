@@ -17,9 +17,9 @@ class WeatherNow extends StatefulWidget {
 
 class _WeatherNowState extends State<WeatherNow> {
 
-  List<Color> _colorsBlue = [MyColors.veryDarkBlue, MyColors.veryLightBlue];
+  List<Color> _colorsBlue = [MyColors.veryDarkBlue, MyColors.lightGreen];
 
-  List<Color> _colorsGreen = [Colors.green , Colors.lightGreen[500]];
+  List<Color> _colorsGreen = [MyColors.green , MyColors.lime];
   List<Color> _colorsRed = [Colors.red , Colors.redAccent];
   List<Color> _colorsOrange = [Colors.deepOrange , Colors.orange];
 
@@ -58,7 +58,7 @@ class _WeatherNowState extends State<WeatherNow> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
                       gradient: LinearGradient(
-                        colors: _colorsBlue,
+                        colors: _colorsGreen,
                         stops: _stops,
                       )
                   ),
