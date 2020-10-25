@@ -71,8 +71,8 @@ class _SquareButtonState extends State<SquareButton> {
         //Decoração
         padding: EdgeInsets.only(
             left: widget.maxHeight * widget.paddinSizeFactor,
-            top: widget.maxHeight * widget.paddinSizeFactor,
-            bottom: widget.maxHeight * widget.paddinSizeFactor
+            top: widget.maxHeight * _buttonPaddinSizeFactorStart,
+            bottom: widget.maxHeight * _buttonPaddinSizeFactorStart
         ),
         width: widget.maxHeight * widget.buttonSizeFactor,
         decoration: BoxDecoration(

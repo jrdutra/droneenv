@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
                             maxHeight: constraints.maxHeight,
                             maxWidth: constraints.maxWidth,
                             buttonColor: MyColors.lightGrey,
-                            buttonPressedColor: MyColors.lightBlue,
+                            buttonPressedColor: MyColors.darkBlue,
                             iconTextColor: MyColors.lightWhite,
                             onTap:(){
                                 _pageIndex = 0;
@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
                               maxHeight: constraints.maxHeight,
                               maxWidth: constraints.maxWidth,
                               buttonColor: MyColors.lightGrey,
-                              buttonPressedColor: MyColors.lightBlue,
+                              buttonPressedColor:MyColors.darkBlue,
                               iconTextColor: MyColors.lightWhite,
                               onTap:(){
                                 _pageIndex = 1;
