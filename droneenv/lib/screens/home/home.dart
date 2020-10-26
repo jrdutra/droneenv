@@ -66,7 +66,6 @@ class _HomeState extends State<Home> {
                     ),
                     Container(
                       padding: EdgeInsets.only(
-                          left: constraints.maxHeight * _bottonMenuPaddingFactor,
                           top: constraints.maxHeight * _bottonMenuPaddingFactor,
                           bottom: constraints.maxHeight * _bottonMenuPaddingFactor
                       ),

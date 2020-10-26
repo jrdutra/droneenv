@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
+import 'package:flutter/painting.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:droneenv/utils/myGradients.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
 
 class WeatherNow extends StatefulWidget {
-
   double maxHeight;
   double maxWidth;
-  
+
   WeatherNow(this.maxHeight, this.maxWidth, {Key key}) : super(key: key);
 
   @override
@@ -17,390 +19,103 @@ class WeatherNow extends StatefulWidget {
 }
 
 class _WeatherNowState extends State<WeatherNow> {
-
-  final double _bottonMenuPaddingFactor = 0.01;
-  final double _borderRadiusFactor = 0.02;
-  final double _boxShadowSpreadRadius = 2.0;
-  final double _boxShadowblurRadius = 1.0;
+  final double _bottonMenuPaddingFactor = 0.02;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(widget.maxHeight * _bottonMenuPaddingFactor),
+        padding: EdgeInsets.only(
+            right: widget.maxWidth * _bottonMenuPaddingFactor,
+            left: widget.maxWidth * _bottonMenuPaddingFactor),
         color: MyColors.darkGrey,
-
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * _borderRadiusFactor)),
-            color: MyColors.lightGrey,
-            boxShadow: [
-              BoxShadow(
-                color: MyColors.darkBlue,
-                spreadRadius: _boxShadowSpreadRadius,
-                blurRadius: _boxShadowblurRadius,
-              )
-            ],
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(widget.maxWidth * _borderRadiusFactor),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: widget.maxHeight * 0.08,
-                  width: widget.maxWidth,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                      gradient: MyGradients.redGradient,
-                    boxShadow: [
-                      BoxShadow(
-                        color: MyColors.darkRed,
-                        spreadRadius: 1,
-                        blurRadius: 2,
-                        offset: Offset(0, 0), // changes position of shadow
-                      ),
-                    ],
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SizedBox(
+                height: widget.maxHeight * 0.01,
+                width: widget.maxWidth,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Tempo agora",
+                    style: TextStyle(fontSize: 30, fontFamily: 'Blinker'),
                   ),
-                  child: Center(
+                  Expanded(
+                    child: Container(),
+                  ),
+                  Icon(
+                    Icons.location_on,
+                    size: 14,
+                  ),
+                  Container(
                     child: Text(
-                      "Não é bom voar",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: MyColors.grey
-                      ),
+                      "São José do Vale do Rio Preto",
+                      style: TextStyle(fontSize: 9),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: widget.maxHeight * 0.06,
-                ),
-                Text(
-                    "Clima agora",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold
-                    ),
-                ),
-                SizedBox(
-                  height: widget.maxHeight * 0.02,
-                ),
-                Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                        color: MyColors.grey,
-                        boxShadow: [
-                          BoxShadow(
-                            color: MyColors.darkGrey,
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset: Offset(2, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      padding: EdgeInsets.only(right: widget.maxWidth * 0.005),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(right: 6),
-                            child: Text(
-                              "Temperatura",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: MyColors.darkWhite
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: widget.maxHeight * 0.05,
-                            width: widget.maxWidth * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                              gradient: MyGradients.greenGradient,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "25°",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: MyColors.grey
+                ],
+              ),
+              SizedBox(
+                height: widget.maxHeight * 0.03,
+                width: widget.maxWidth,
+              ),
+              Stack(
+                alignment: AlignmentDirectional.topStart,
+                children: [
+                  Container(
+                    height: 80,
+                    width: 120,
+                    color: MyColors.darkGrey,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 6,
+                          color: MyColors.darkBlue,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 0, top: 6),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 8),
+                                child:Text(
+                                  "Temperatura",
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto'
+                                  ),
                                 ),
                               ),
-                            ),
+                              SizedBox(
+                                height: 29,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                      MdiIcons.thermometer
+                                  ),
+                                  Text("25 ºC")
+                                ],
+                              )
+                            ],
                           ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: widget.maxHeight * 0.02,
-                ),
-                Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                        color: MyColors.grey,
-                        boxShadow: [
-                          BoxShadow(
-                            color: MyColors.darkGrey,
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset: Offset(2, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
+                        )
+                      ],
                     ),
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      padding: EdgeInsets.only(right: widget.maxWidth * 0.005),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(right: 6),
-                            child: Text(
-                              "Ventos",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: MyColors.darkWhite
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: widget.maxHeight * 0.05,
-                            width: widget.maxWidth * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                              gradient: MyGradients.redGradient,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "30 km/h",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: MyColors.grey
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: widget.maxHeight * 0.02,
-                ),
-                Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                        color: MyColors.grey,
-                        boxShadow: [
-                          BoxShadow(
-                            color: MyColors.darkGrey,
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset: Offset(2, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      padding: EdgeInsets.only(right: widget.maxWidth * 0.005),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(right: 6),
-                            child: Text(
-                              "Visibilidade",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: MyColors.darkWhite
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: widget.maxHeight * 0.05,
-                            width: widget.maxWidth * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                              gradient: MyGradients.greenGradient,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "10 km",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: MyColors.grey
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: widget.maxHeight * 0.02,
-                ),
-                Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                        color: MyColors.grey,
-                        boxShadow: [
-                          BoxShadow(
-                            color: MyColors.darkGrey,
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset: Offset(2, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      padding: EdgeInsets.only(right: widget.maxWidth * 0.005),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(right: 6),
-                            child: Text(
-                              "Precipitação",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: MyColors.darkWhite
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: widget.maxHeight * 0.05,
-                            width: widget.maxWidth * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                              gradient: MyGradients.yellowGradient,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "40%",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: MyColors.grey
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: widget.maxHeight * 0.02,
-                ),
-                Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                        color: MyColors.grey,
-                        boxShadow: [
-                          BoxShadow(
-                            color: MyColors.darkGrey,
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset: Offset(2, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: widget.maxHeight * 0.06,
-                      width: widget.maxWidth * 0.8,
-                      padding: EdgeInsets.only(right: widget.maxWidth * 0.005),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(right: 6),
-                            child: Text(
-                              "Satélites Visíveis",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: MyColors.darkWhite
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: widget.maxHeight * 0.05,
-                            width: widget.maxWidth * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                              gradient: MyGradients.greenGradient,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "14",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: MyColors.grey
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          )
-        ),
-    );
+                  )
+                ],
+              ),
+            ]));
   }
 }

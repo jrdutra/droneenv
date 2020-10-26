@@ -17,7 +17,7 @@ class WeatherForecast extends StatefulWidget {
 class _WeatherForecastState extends State<WeatherForecast> {
 
   final double _bottonMenuPaddingFactor = 0.01;
-  final double _borderRadiusFactor = 0.02;
+  final double _borderRadiusFactor = 0.01;
   final double _boxShadowSpreadRadius = 2.0;
   final double _boxShadowblurRadius = 1.0;
 
@@ -43,7 +43,6 @@ class _WeatherForecastState extends State<WeatherForecast> {
             padding: EdgeInsets.all(widget.maxWidth * _borderRadiusFactor),
             child: Column(
               children: [
-
                 Container(
                   height: widget.maxHeight * 0.08,
                   width: widget.maxWidth,

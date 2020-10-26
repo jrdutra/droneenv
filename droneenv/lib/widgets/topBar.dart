@@ -37,12 +37,14 @@ class TopBar extends StatefulWidget {
 class _TopBarState extends State<TopBar> {
 
   double _mutablePaddinFactor = 0.09;
+
   final double _iMutablePaddinFactor = 0.09;
 
   final double _heightWidgetFactor = 0.10;
 
   final double _logoPaddingTop = 2;
   final double _logoPaddingLeft = 10;
+  final double _logoPaddingFactorLeft = 0.01;
 
   final double _logoHeigtFactor = 0.3;
 
@@ -58,7 +60,7 @@ class _TopBarState extends State<TopBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container( // Logo
-            padding: EdgeInsets.only(top: _logoPaddingTop, left: _logoPaddingLeft),
+            padding: EdgeInsets.only(top: _logoPaddingTop, left: widget.maxWidth * _logoPaddingFactorLeft),
             width: widget.maxWidth * _logoHeigtFactor,
             child: Image.asset(widget.logoPath),
           ),

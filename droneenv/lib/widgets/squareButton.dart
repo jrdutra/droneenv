@@ -43,7 +43,7 @@ class _SquareButtonState extends State<SquareButton> {
   final double _buttonSizeFactorEnd = 0.18;
   final double _buttonPaddinSizeFactorEnd = 0.03;
 
-  final double _borderRadiusFactor = 0.02;
+  final double _borderRadiusFactor = 0.005;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class _SquareButtonState extends State<SquareButton> {
         padding: EdgeInsets.only(
             left: widget.maxHeight * widget.paddinSizeFactor,
             top: widget.maxHeight * _buttonPaddinSizeFactorStart,
-            bottom: widget.maxHeight * _buttonPaddinSizeFactorStart
+            bottom: widget.maxHeight * _buttonPaddinSizeFactorStart,
         ),
         width: widget.maxHeight * widget.buttonSizeFactor,
         decoration: BoxDecoration(

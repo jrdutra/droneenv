@@ -14,6 +14,8 @@ dependencies:
   cupertino_icons: ^0.1.3
   flutter_native_splash: ^0.1.9
   provider: ^3.0.0
+  material_design_icons_flutter: ^4.0.5755
+  community_material_icon: ^5.4.55
 
 flutter_native_splash:
   image: assets/images/splash.png
@@ -26,23 +28,26 @@ dev_dependencies:
 
 flutter:
 
+  fonts:
+    - family: Jockey
+      fonts:
+        - asset: assets/fonts/JockeyOne-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Medium.ttf
+    - family: Vampiro
+      fonts:
+        - asset: assets/fonts/VampiroOne-Regular.ttf
+    - family: Blinker
+      fonts:
+        - asset: assets/fonts/Blinker-SemiBold.ttf
+
+
+
   uses-material-design: true
 
   assets:
     - assets/images/logo-dark.png
     - assets/images/logo-light.png
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+
