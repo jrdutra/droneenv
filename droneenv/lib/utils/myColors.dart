@@ -4,11 +4,18 @@ abstract class MyColors {
 
   //Atributes
 
+  static Color veryUltraLightGrey = Color(0xFF747474);
   static Color ultraLightGrey = Color(0xFF545454);
   static Color veryLightGrey = Color(0xFF444444);
   static Color lightGrey = Color(0xFF343434);
   static Color grey = Color(0xFF242424);
   static Color darkGrey = Color(0xFF141414);
+
+  static Color veryLightWhite = Color(0xFFFFFFFF);
+  static Color lightWhite = Color(0xFFEBEBEB);
+  static Color darkWhite = Color(0xFFDFDFDF);
+  static Color veryDarkWhite = Color(0xFFcfcfcf);
+  static Color veryVeryDarkWhite = Color(0xFFb5b5b5);
 
   static Color veryLightBlue = Colors.blue[100];
   static Color lightBlue = Colors.blue[300];
@@ -76,9 +83,6 @@ abstract class MyColors {
   static Color darkPink = Colors.pink[700];
   static Color veryDarkPink = Colors.pink[900];
 
-  static Color veryLightWhite = Color(0xFFFFFFFF);
-  static Color lightWhite = Color(0xFFEBEBEB);
-  static Color darkWhite = Color(0xFFDFDFDF);
-  static Color veryDarkWhite = Color(0xFFcfcfcf);
+
 
 }

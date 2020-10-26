@@ -19,7 +19,7 @@ class WeatherNow extends StatefulWidget {
 }
 
 class _WeatherNowState extends State<WeatherNow> {
-  final double _bottonMenuPaddingFactor = 0.02;
+  final double _bottonMenuPaddingFactor = 0.01;
 
   @override
   Widget build(BuildContext context) {
@@ -61,28 +61,132 @@ class _WeatherNowState extends State<WeatherNow> {
                 ],
               ),
               SizedBox(
-                height: widget.maxHeight * 0.05,
+                height: widget.maxHeight * 0.03,
                 width: widget.maxWidth,
               ),
               Container(
-                width: widget.maxWidth * 0.8,
-                height: widget.maxHeight * 0.6,
+                width: widget.maxWidth,
+                height: widget.maxHeight * 0.61,
                 color: MyColors.darkGrey,
                 child: GridView.count(
                   primary: true,
-                  crossAxisSpacing: 47,
-                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 27,
+                  mainAxisSpacing: 10,
                   crossAxisCount: 2,
-                  childAspectRatio: 1.9,
+                  childAspectRatio: 2.0,
                   children: <Widget>[
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 6,
+                                color: MyColors.darkRed,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
 
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC",)
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                     Stack(
                       alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
-                          height: 55,
-                          width: 120,
-                          color: MyColors.darkGrey,
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
                         Container(
                           child: Row(
@@ -90,12 +194,12 @@ class _WeatherNowState extends State<WeatherNow> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 55,
+                                height: 65,
                                 width: 6,
-                                color: MyColors.blue,
+                                color: MyColors.darkBlue,
                               ),
                               Container(
-                                padding: EdgeInsets.only(left: 0, top: 0),
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,9 +236,9 @@ class _WeatherNowState extends State<WeatherNow> {
                       alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
-                          height: 55,
-                          width: 120,
-                          color: MyColors.darkGrey,
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
                         Container(
                           child: Row(
@@ -142,12 +246,12 @@ class _WeatherNowState extends State<WeatherNow> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 55,
+                                height: 65,
                                 width: 6,
-                                color: MyColors.darkWhite,
+                                color: MyColors.darkBlue,
                               ),
                               Container(
-                                padding: EdgeInsets.only(left: 0, top: 0),
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,17 +281,173 @@ class _WeatherNowState extends State<WeatherNow> {
                               )
                             ],
                           ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 6,
+                                color: MyColors.darkRed,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                          fontFamily: 'Roboto',
 
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC",)
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
                       ],
                     ),
                     Stack(
                       alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
-                          height: 55,
-                          width: 120,
-                          color: MyColors.darkGrey,
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
                         Container(
                           child: Row(
@@ -195,12 +455,12 @@ class _WeatherNowState extends State<WeatherNow> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 55,
+                                height: 65,
                                 width: 6,
-                                color: MyColors.blue,
+                                color: MyColors.darkBlue,
                               ),
                               Container(
-                                padding: EdgeInsets.only(left: 0, top: 0),
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -237,9 +497,9 @@ class _WeatherNowState extends State<WeatherNow> {
                       alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
-                          height: 55,
-                          width: 120,
-                          color: MyColors.darkGrey,
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
                         Container(
                           child: Row(
@@ -247,12 +507,12 @@ class _WeatherNowState extends State<WeatherNow> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 55,
+                                height: 65,
                                 width: 6,
-                                color: MyColors.blue,
+                                color: MyColors.darkBlue,
                               ),
                               Container(
-                                padding: EdgeInsets.only(left: 0, top: 0),
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -289,9 +549,9 @@ class _WeatherNowState extends State<WeatherNow> {
                       alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
-                          height: 55,
-                          width: 120,
-                          color: MyColors.darkGrey,
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
                         Container(
                           child: Row(
@@ -299,12 +559,12 @@ class _WeatherNowState extends State<WeatherNow> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 55,
+                                height: 65,
                                 width: 6,
-                                color: MyColors.blue,
+                                color: MyColors.darkBlue,
                               ),
                               Container(
-                                padding: EdgeInsets.only(left: 0, top: 0),
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -341,9 +601,9 @@ class _WeatherNowState extends State<WeatherNow> {
                       alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
-                          height: 55,
-                          width: 120,
-                          color: MyColors.darkGrey,
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
                         Container(
                           child: Row(
@@ -351,12 +611,12 @@ class _WeatherNowState extends State<WeatherNow> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 55,
+                                height: 65,
                                 width: 6,
-                                color: MyColors.darkWhite,
+                                color: MyColors.darkBlue,
                               ),
                               Container(
-                                padding: EdgeInsets.only(left: 0, top: 0),
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -386,13 +646,84 @@ class _WeatherNowState extends State<WeatherNow> {
                               )
                             ],
                           ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 65,
+                          width: widget.maxWidth,
+                          color: MyColors.grey,
                         ),
-
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: widget.maxHeight * 0.008),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ],
                 ),
+              ),
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 15,
+                      width: 15,
+                      color: MyColors.darkRed,
+                    ),
+                    SizedBox(
+                      width: widget.maxWidth * 0.01,
+                    ),
+                    Text(
+                      "Não é bom voar",
+                      style: TextStyle(fontSize: 20, fontFamily: 'Roboto'),
+                    ),
+                  ],
+                ),
               )
+
             ]));
   }
 }
