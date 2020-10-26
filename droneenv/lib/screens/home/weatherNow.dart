@@ -64,58 +64,437 @@ class _WeatherNowState extends State<WeatherNow> {
                 height: widget.maxHeight * 0.03,
                 width: widget.maxWidth,
               ),
-              Stack(
-                alignment: AlignmentDirectional.topStart,
-                children: [
-                  Container(
-                    height: 80,
-                    width: 120,
-                    color: MyColors.darkGrey,
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              Container(
+                width: widget.maxWidth * 0.8,
+                height: widget.maxHeight * 0.6,
+                color: MyColors.darkGrey,
+                child: GridView.count(
+                  primary: true,
+                  crossAxisSpacing: 47,
+                  mainAxisSpacing: 15,
+                  crossAxisCount: 2,
+                  childAspectRatio: 1.6,
+                  children: <Widget>[
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
                       children: [
                         Container(
                           height: 80,
-                          width: 6,
-                          color: MyColors.darkBlue,
+                          width: 120,
+                          color: MyColors.darkGrey,
                         ),
                         Container(
-                          padding: EdgeInsets.only(left: 0, top: 6),
-                          child: Column(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsets.only(left: 8),
-                                child:Text(
-                                  "Temperatura",
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto'
-                                  ),
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
                                 ),
-                              ),
-                              SizedBox(
-                                height: 29,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                      MdiIcons.thermometer
-                                  ),
-                                  Text("25 ºC")
-                                ],
                               )
                             ],
                           ),
                         )
                       ],
                     ),
-                  )
-                ],
-              ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 120,
+                          color: MyColors.darkGrey,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 6,
+                                color: MyColors.darkBlue,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 0, top: 6),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child:Text(
+                                        "Temperatura",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto'
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 29,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                            MdiIcons.thermometer
+                                        ),
+                                        Text("25 ºC")
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+
+                  ],
+                ),
+              )
             ]));
   }
 }
