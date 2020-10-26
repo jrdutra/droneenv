@@ -75,6 +75,7 @@ class _WeatherNowState extends State<WeatherNow> {
                   crossAxisCount: 2,
                   childAspectRatio: 1.6,
                   children: <Widget>[
+
                     Stack(
                       alignment: AlignmentDirectional.topStart,
                       children: [
@@ -91,7 +92,7 @@ class _WeatherNowState extends State<WeatherNow> {
                               Container(
                                 height: 80,
                                 width: 6,
-                                color: MyColors.darkBlue,
+                                color: MyColors.blue,
                               ),
                               Container(
                                 padding: EdgeInsets.only(left: 0, top: 6),
@@ -143,7 +144,7 @@ class _WeatherNowState extends State<WeatherNow> {
                               Container(
                                 height: 80,
                                 width: 6,
-                                color: MyColors.darkBlue,
+                                color: MyColors.blue,
                               ),
                               Container(
                                 padding: EdgeInsets.only(left: 0, top: 6),
@@ -195,7 +196,7 @@ class _WeatherNowState extends State<WeatherNow> {
                               Container(
                                 height: 80,
                                 width: 6,
-                                color: MyColors.darkBlue,
+                                color: MyColors.darkWhite,
                               ),
                               Container(
                                 padding: EdgeInsets.only(left: 0, top: 6),
@@ -247,7 +248,7 @@ class _WeatherNowState extends State<WeatherNow> {
                               Container(
                                 height: 80,
                                 width: 6,
-                                color: MyColors.darkBlue,
+                                color: MyColors.blue,
                               ),
                               Container(
                                 padding: EdgeInsets.only(left: 0, top: 6),
@@ -299,7 +300,7 @@ class _WeatherNowState extends State<WeatherNow> {
                               Container(
                                 height: 80,
                                 width: 6,
-                                color: MyColors.darkBlue,
+                                color: MyColors.blue,
                               ),
                               Container(
                                 padding: EdgeInsets.only(left: 0, top: 6),
@@ -351,111 +352,7 @@ class _WeatherNowState extends State<WeatherNow> {
                               Container(
                                 height: 80,
                                 width: 6,
-                                color: MyColors.darkBlue,
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 0, top: 6),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 8),
-                                      child:Text(
-                                        "Temperatura",
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto'
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 29,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                            MdiIcons.thermometer
-                                        ),
-                                        Text("25 ºC")
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    Stack(
-                      alignment: AlignmentDirectional.topStart,
-                      children: [
-                        Container(
-                          height: 80,
-                          width: 120,
-                          color: MyColors.darkGrey,
-                        ),
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 80,
-                                width: 6,
-                                color: MyColors.darkBlue,
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 0, top: 6),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 8),
-                                      child:Text(
-                                        "Temperatura",
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto'
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 29,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                            MdiIcons.thermometer
-                                        ),
-                                        Text("25 ºC")
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    Stack(
-                      alignment: AlignmentDirectional.topStart,
-                      children: [
-                        Container(
-                          height: 80,
-                          width: 120,
-                          color: MyColors.darkGrey,
-                        ),
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 80,
-                                width: 6,
-                                color: MyColors.darkBlue,
+                                color: MyColors.blue,
                               ),
                               Container(
                                 padding: EdgeInsets.only(left: 0, top: 6),
