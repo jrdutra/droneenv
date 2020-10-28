@@ -33,31 +33,55 @@ class _WeatherNowState extends State<WeatherNow> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              SizedBox(
-                height: widget.maxHeight * 0.01,
-                width: widget.maxWidth,
-              ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Tempo agora",
-                    style: TextStyle(fontSize: 30, fontFamily: 'Blinker'),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Tempo agora",
+                        style: TextStyle(fontSize: 30, fontFamily: 'Blinker'),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 14,
+                          ),
+                          Container(
+                            child: Text(
+                              "São José do Vale do Rio Preto",
+                              style: TextStyle(fontSize: 11),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  Expanded(
-                    child: Container(),
-                  ),
-                  Icon(
-                    Icons.location_on,
-                    size: 14,
+                  SizedBox(
+                    width: widget.maxWidth * 0.065,
                   ),
                   Container(
-                    child: Text(
-                      "São José do Vale do Rio Preto",
-                      style: TextStyle(fontSize: 9),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          height: 15,
+                          width: 15,
+                          color: MyColors.darkRed,
+                        ),
+                        SizedBox(
+                          width: widget.maxWidth * 0.01,
+                        ),
+                        Text(
+                          "Não é bom voar",
+                          style: TextStyle(fontSize: 20, fontFamily: 'Roboto'),
+                        ),
+                      ],
                     ),
-                  ),
+                  )
                 ],
               ),
               SizedBox(
@@ -66,7 +90,7 @@ class _WeatherNowState extends State<WeatherNow> {
               ),
               Container(
                 width: widget.maxWidth,
-                height: widget.maxHeight * 0.61,
+                height: widget.maxHeight * 0.635,
                 color: MyColors.darkGrey,
                 child: GridView.count(
                   primary: true,
@@ -704,26 +728,6 @@ class _WeatherNowState extends State<WeatherNow> {
                   ],
                 ),
               ),
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 15,
-                      width: 15,
-                      color: MyColors.darkRed,
-                    ),
-                    SizedBox(
-                      width: widget.maxWidth * 0.01,
-                    ),
-                    Text(
-                      "Não é bom voar",
-                      style: TextStyle(fontSize: 20, fontFamily: 'Roboto'),
-                    ),
-                  ],
-                ),
-              )
-
             ]));
   }
 }
