@@ -42,8 +42,6 @@ class _TopBarState extends State<TopBar> {
 
   final double _heightWidgetFactor = 0.10;
 
-  final double _logoPaddingTop = 2;
-  final double _logoPaddingLeft = 10;
   final double _logoPaddingFactorLeft = 0.01;
 
   final double _logoHeigtFactor = 0.3;
@@ -60,12 +58,12 @@ class _TopBarState extends State<TopBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container( // Logo
-            padding: EdgeInsets.only(top: _logoPaddingTop, left: widget.maxWidth * _logoPaddingFactorLeft),
+            padding: EdgeInsets.only(top: widget.maxHeight * 0.001 , left: widget.maxWidth * _logoPaddingFactorLeft),
             width: widget.maxWidth * _logoHeigtFactor,
             child: Image.asset(widget.logoPath),
           ),
           Container( //Botões
-              padding: EdgeInsets.only(top: _logoPaddingTop, right: _logoPaddingLeft),
+              padding: EdgeInsets.only(top: widget.maxHeight * 0.001, right: widget.maxWidth * _logoPaddingFactorLeft),
               child: Row(
                 children: [
                   GestureDetector(
