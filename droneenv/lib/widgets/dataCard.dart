@@ -40,7 +40,7 @@ class DataCard extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.only(
-                    left: 0, top: maxHeight * 0.008
+                    left: maxWidth * 0.02, top: maxHeight * 0.01
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -62,6 +62,9 @@ class DataCard extends StatelessWidget {
                       children: [
                         Icon(
                             icon
+                        ),
+                        SizedBox(
+                          width: maxWidth * 0.017,
                         ),
                         Text(value)
                       ],
