@@ -158,7 +158,6 @@ class _WeatherNowState extends State<WeatherNow> {
                       maxHeight: widget.maxHeight,
                       icon:  MdiIcons.compass,
                     ),
-
                     DataCard(
                       label: "Capa de nuvens",
                       value: "12 %",
