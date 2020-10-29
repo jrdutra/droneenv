@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:droneenv/utils/myColors.dart';
 
 class DataCard extends StatelessWidget {
 
@@ -51,7 +52,8 @@ class DataCard extends StatelessWidget {
                       child:Text(
                         label,
                         style: TextStyle(
-                            fontFamily: 'Roboto'
+                            fontFamily: 'Roboto',
+                            color: MyColors.veryDarkWhite
                         ),
                       ),
                     ),
@@ -61,12 +63,18 @@ class DataCard extends StatelessWidget {
                     Row(
                       children: [
                         Icon(
-                            icon
+                            icon,
+                            color: MyColors.veryDarkWhite,
                         ),
                         SizedBox(
                           width: maxWidth * 0.017,
                         ),
-                        Text(value)
+                        Text(
+                            value,
+                            style: TextStyle(
+                              color: MyColors.veryDarkWhite
+                            ),
+                        )
                       ],
                     )
                   ],

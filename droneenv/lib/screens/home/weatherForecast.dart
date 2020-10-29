@@ -1,4 +1,3 @@
-import 'package:droneenv/utils/myGradients.dart';
 import 'package:flutter/material.dart';
 import 'package:droneenv/utils/myColors.dart';
 import 'dart:io';
@@ -48,7 +47,6 @@ class _WeatherForecastState extends State<WeatherForecast> {
                   width: widget.maxWidth,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(widget.maxWidth * 0.02)),
-                      gradient: MyGradients.greenGradient
                   ),
                   child: Center(
                     child: Text(

@@ -85,7 +85,7 @@ class _HomeState extends State<Home> {
                             maxWidth: constraints.maxWidth,
                             buttonColor: MyColors.lightGrey,
                             buttonPressedColor: MyColors.darkBlue,
-                            iconTextColor: MyColors.lightWhite,
+                            iconTextColor: MyColors.veryDarkWhite,
                             onTap:(){
                                 _pageIndex = 0;
                                 _pageController.animateToPage(_pageIndex, curve: Curves.decelerate, duration: Duration(milliseconds: 240)); // for animated jump. Requires a curve and a duration
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                               maxWidth: constraints.maxWidth,
                               buttonColor: MyColors.lightGrey,
                               buttonPressedColor:MyColors.darkBlue,
-                              iconTextColor: MyColors.lightWhite,
+                              iconTextColor: MyColors.veryDarkWhite,
                               onTap:(){
                                 _pageIndex = 1;
                                 _pageController.animateToPage(_pageIndex, curve: Curves.decelerate, duration: Duration(milliseconds: 240));

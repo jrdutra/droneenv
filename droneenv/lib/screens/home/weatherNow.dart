@@ -29,73 +29,49 @@ class _WeatherNowState extends State<WeatherNow> {
         color: MyColors.darkGrey,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Tempo agora",
-                        style: TextStyle(
-                            fontSize:  widget.maxWidth * 0.079,
-                            fontFamily: 'Blinker'
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.location_on,
-                            size: widget.maxWidth * 0.038,
-                          ),
-                          Container(
-                            child: Text(
-                              "São José do Vale do Rio Preto",
-                              style: TextStyle(
-                                  fontSize: widget.maxWidth * 0.0285
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                  Text(
+                    "Condições atuais ruins",
+                    style: TextStyle(
+                        fontSize: widget.maxWidth * 0.07, fontFamily: 'Roboto',
+                        color: MyColors.veryDarkWhite
+                    ),
                   ),
                   SizedBox(
-                    width: widget.maxWidth * 0.06,
+                    height: widget.maxHeight * 0.002,
                   ),
-                  Container(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          height: widget.maxWidth * 0.05,
-                          width: widget.maxWidth * 0.05,
-                          color: MyColors.darkRed,
-                        ),
-                        SizedBox(
-                          width: widget.maxWidth * 0.01,
-                        ),
-                        Text(
-                          "Condições ruins",
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        size: widget.maxWidth * 0.038,
+                        color: MyColors.veryDarkWhite,
+                      ),
+                      Container(
+                        child: Text(
+                          "São José do Vale do Rio Preto",
                           style: TextStyle(
-                              fontSize: widget.maxWidth * 0.055, fontFamily: 'Roboto'
+                              fontSize: widget.maxWidth * 0.0385,
+                              color: MyColors.veryDarkWhite
                           ),
                         ),
-                      ],
-                    ),
-                  )
+                      ),
+                    ],
+                  ),
                 ],
               ),
               SizedBox(
-                height: widget.maxHeight * 0.032,
+                height: widget.maxHeight * 0.03,
                 width: widget.maxWidth,
               ),
               Container(
                 width: widget.maxWidth,
-                height: widget.maxHeight * 0.635,
+                height: widget.maxHeight * 0.64,
                 color: MyColors.darkGrey,
                 child: GridView.count(
                   primary: true,
@@ -187,9 +163,9 @@ class _WeatherNowState extends State<WeatherNow> {
                     ),
                     DataCard(
                       label: "Sat. Visíveis",
-                      value: "14",
+                      value: "8 Sats.",
                       backgroundColor: MyColors.grey,
-                      pipeColor: MyColors.darkBlue,
+                      pipeColor: MyColors.darkRed,
                       maxWidth: widget.maxWidth,
                       maxHeight: widget.maxHeight,
                       icon:  MdiIcons.satelliteVariant,
